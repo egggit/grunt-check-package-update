@@ -1,3 +1,13 @@
-node_modules
+/node_modules
+/build
+/public/export
+/public/upload
+/.tmp
+/.sass-cache
+/bower_components
+.DS_Store
+._.DS_Store
+.tags
+.tags1
 npm-debug.log
 tmp
