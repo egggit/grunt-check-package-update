@@ -1,0 +1,15 @@
+{
+  "disallowSpaceAfterObjectKeys": { "allExcept": ["aligned", "method"] },
+  "disallowSpacesInsideArrayBrackets": true,
+  "disallowSpacesInsideParentheses": true,
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "requireCapitalizedConstructors": true,
+  "requireCommaBeforeLineBreak": true,
+  "requireParenthesesAroundIIFE": true,
+  "requireSpaceAfterBinaryOperators": true,
+  "requireSpaceAfterKeywords": true,
+  "requireSpaceBeforeBinaryOperators": true,
+  "requireSpaceBeforeBlockStatements": 1,
+  "validateIndentation": {"value": 2, "allExcept": ["comments", "emptyLines"] },
+  "validateQuoteMarks": "'"
+}
