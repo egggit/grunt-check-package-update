@@ -48,23 +48,7 @@ module.exports = function (grunt) {
 
     // Configuration to be run (and then tested).
     'check_package_update': {
-      'default_options': {
-        options: {
-          pathOfNPMPackage: 'package.json',
-          pathOfBowerPackage: 'bower.json',
-          regexOfPrivateRepo: /^git\+.*$/,
-          regexOfGitTag: /\.git#(.*)$/,
-          regexOfGitWithoutTag: /^([^#]*)#.*$/,
-        },
-      },
-      'custom_options': {
-        options: {
-          pathOfNPMPackage: 'node_package.json',
-          pathOfBowerPackage: 'bower.json',
-          regexOfPrivateRepo: /^git\+.*$/,
-          regexOfGitTag: /\.git#(.*)$/,
-          regexOfGitWithoutTag: /^([^#]*)#.*$/,
-        },
+      all: {
       }
     },
 

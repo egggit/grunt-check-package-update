@@ -79,9 +79,16 @@ module.exports = function (grunt) {
     }; // arrayOfPrivateRepo
 
     var checkLatestTagWithArrayOfRepo = function (arrayOfRepo) {
-      if (typeof arrayOfRepo === 'undefined' || arrayOfRepo === null || arrayOfRepo.length === 0) {
+      if (typeof arrayOfRepo === 'undefined' || arrayOfRepo === null) {
         return;
       }
+
+      if (arrayOfRepo.length === 0) {
+        grunt.log.write('** No private packages found...').ok();
+        return;
+      }
+
+      var numberOfAvailableUpdates = 0;
 
       for (var index = 0; index < arrayOfRepo.length; ++index) {
         var data = arrayOfRepo[index];
@@ -110,9 +117,17 @@ module.exports = function (grunt) {
 
         if (data.latestTag !== data.currentTag) {
           grunt.log.subhead('** You can upgrade ' + data.packageManager + ': ' + data.nameOfPackage + ' ' + data.currentTag + ' -> ' + data.latestTag + ' (' + data.urlOfRepoWithoutTag + ')');
+          ++numberOfAvailableUpdates;
         }
 
       } // for (var index = 0; index
+
+      if (numberOfAvailableUpdates === 0) {
+        grunt.log.write('** Your packages is up to date, number of private packages found: ' + arrayOfRepo.length + '...').ok();
+      }
+      else {
+        grunt.log.write('** There are: ' + numberOfAvailableUpdates + '/' + arrayOfRepo.length + ' package(s) to be updated...').ok();
+      }
 
     }; // addCurrentRepoTagToArrayOfRepo
 
